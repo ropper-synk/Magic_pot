@@ -2,6 +2,7 @@
 
 import React from 'react';
 import IonIcon from './IonIcon';
+import Image from 'next/image';
 
 interface ModernCardProps {
   thumbnailSrc: string;
@@ -34,11 +35,23 @@ export default function ModernCard({
     <div className="modern-card">
       <h2 className="card-header">{header}</h2>
       <p className="card-subhead">{subhead}</p>
-      <div className="card-thumbnail" style={{ marginTop: '20px' }}>
-        <img src={thumbnailSrc} alt={thumbnailAlt} className="thumbnail-image" />
+      <div className="thumbnail-container">
+        <Image 
+          src={thumbnailSrc} 
+          alt={thumbnailAlt} 
+          className="thumbnail-image"
+          width={300}
+          height={200}
+        />
       </div>
-      <div className="card-media">
-        <img src={mediaSrc} alt={mediaAlt} className="media-image" />
+      <div className="media-container">
+        <Image 
+          src={mediaSrc} 
+          alt={mediaAlt} 
+          className="media-image"
+          width={600}
+          height={400}
+        />
       </div>
       <div className="card-content">
         <p className="card-description">{description}</p>

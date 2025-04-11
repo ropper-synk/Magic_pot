@@ -1,6 +1,7 @@
 import ImageSlider from '../../components/ImageSlider';
 import IonIcon from '../../components/IonIcon';
 import Link from 'next/link';
+import Image from 'next/image'
 
 const sliderImages = [
   '/Back  (1).jpg',
@@ -46,12 +47,18 @@ export default function Company() {
           <div className="company-section">
             <h2 className="section-title">Our Leadership</h2>
             <div className="ceo-profile">
-              <img src="/CEO.jpeg" alt="Our CEO" className="ceo-profile-image" />
+              <Image 
+                src="/CEO.jpeg" 
+                alt="Our CEO" 
+                className="ceo-profile-image"
+                width={200}
+                height={200}
+              />
               <div className="ceo-profile-content">
                 <h3 className="ceo-name">Our CEO</h3>
                 <p>
                   Guided by visionary leadership committed to innovation and quality. Our CEO brings years of experience 
-                  in food technology and a passion for creating products that make a difference in people's lives.
+                  in food technology and a passion for creating products that make a difference in people&apos;s lives.
                 </p>
               </div>
             </div>

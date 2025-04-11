@@ -24,13 +24,13 @@ export default function Home() {
             Experience the future of cooking with our revolutionary self-heating technology.
             Enjoy hot, delicious meals anywhere, anytime!
           </p>
-          <a href="#features" className="hero-cta">
+          <Link href="#features" className="hero-cta">
             Discover More
-          </a>
+          </Link>
         </div>
       </div>
 
-      <div className="menu">
+      <nav className="menu">
         <ul>
           <li className="link">
             <Link href="/" className="link-content">
@@ -89,7 +89,7 @@ export default function Home() {
             </Link>
           </li>
         </ul>
-      </div>
+      </nav>
 
       <div className="title-container">
         <div className="title-with-icon">
@@ -156,16 +156,16 @@ export default function Home() {
               warm, delicious food anywhere, anytime.
             </p>
             <div className="social-links">
-              <a href="#" className="social-link">
+              <a href="#" className="social-link" aria-label="Facebook">
                 <IonIcon name="logo-facebook" />
               </a>
-              <a href="#" className="social-link">
+              <a href="#" className="social-link" aria-label="Twitter">
                 <IonIcon name="logo-twitter" />
               </a>
-              <a href="#" className="social-link">
+              <a href="#" className="social-link" aria-label="Instagram">
                 <IonIcon name="logo-instagram" />
               </a>
-              <a href="#" className="social-link">
+              <a href="#" className="social-link" aria-label="LinkedIn">
                 <IonIcon name="logo-linkedin" />
               </a>
             </div>
@@ -174,11 +174,11 @@ export default function Home() {
           <div className="footer-section">
             <h3 className="footer-title">Quick Links</h3>
             <div className="footer-links">
-              <a href="#" className="footer-link">How It Works</a>
-              <a href="#" className="footer-link">Safety Information</a>
-              <a href="#" className="footer-link">Product Guide</a>
-              <a href="#" className="footer-link">FAQs</a>
-              <a href="#" className="footer-link">Contact Support</a>
+              <Link href="#" className="footer-link">How It Works</Link>
+              <Link href="#" className="footer-link">Safety Information</Link>
+              <Link href="#" className="footer-link">Product Guide</Link>
+              <Link href="#" className="footer-link">FAQs</Link>
+              <Link href="#" className="footer-link">Contact Support</Link>
             </div>
           </div>
           
@@ -188,12 +188,11 @@ export default function Home() {
               <a href="mailto:info@magicpot.com" className="footer-link">
                 <IonIcon name="mail-outline" /> shaikhsabar@gmail.com
               </a>
-              <a href="tel:+1234567890" className="footer-link">
+              <a href="tel:+919881181400" className="footer-link">
                 <IonIcon name="call-outline" /> +91 9881181400
               </a>
               <a href="#" className="footer-link">
                 <IonIcon name="location-outline" /> YCIS CII Workspace
-                <br />
               </a>
             </div>
           </div>
@@ -204,6 +203,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+        <Image
+          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+          src="/next.svg"
+          alt="Next.js Logo"
+          width={180}
+          height={37}
+          priority
+        />
+      </div>
     </>
   );
 }
