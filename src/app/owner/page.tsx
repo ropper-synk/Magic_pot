@@ -32,34 +32,45 @@ export default function Company() {
       </div>
 
       <div className="company-content">
-        <h1 className="company-title">Our Company</h1>
+        <h1 className="company-title">Company : iFTX</h1>
         <div className="company-info">
           <div className="company-section">
-            <h2 className="section-title">About Us</h2>
-            <p>
-              Maggic Pot is a pioneering company in self-heating food technology, 
-              founded with a vision to revolutionize how people enjoy hot meals on the go. 
-              Our innovative solutions combine cutting-edge technology with user-friendly design 
-              to create a seamless cooking experience.
-            </p>
-          </div>
+            <h2 className="section-title">Founders</h2>
+            <div className="founders-container">
+              <div className="founder-profile">
+                <Image 
+                  src="/CEO.jpeg" 
+                  alt="Founder 1" 
+                  className="founder-image"
+                  width={5000}
+                  height={50}
+                />
+                <div className="founder-content">
+                  <h3 className="founder-name">Mr.Sabar Shaikh</h3>
+                  <p>
+                  Mr. Sabar Shaikh is a graduate with a B.E. in Mechanical Engineering and possesses a strong technical 
+                  background. In addition to his academic qualifications, he has earned certifications in Dietician Courses, FSSAI Food Safety Supervisor Training, and Culinary Arts, 
+                  reflecting his diverse interests and dedication to promoting both technical and nutritional education.</p>
+                </div>
+              </div>
 
-          <div className="company-section">
-            <h2 className="section-title">Our Leadership</h2>
-            <div className="ceo-profile">
-              <Image 
-                src="/CEO.jpeg" 
-                alt="Our CEO" 
-                className="ceo-profile-image"
-                width={200}
-                height={200}
-              />
-              <div className="ceo-profile-content">
-                <h3 className="ceo-name">Our CEO</h3>
-                <p>
-                  Guided by visionary leadership committed to innovation and quality. Our CEO brings years of experience 
-                  in food technology and a passion for creating products that make a difference in people&apos;s lives.
-                </p>
+              <div className="founder-profile">
+                <Image 
+                  src="/CEO.jpeg" 
+                  alt="Founder 2" 
+                  className="founder-image"
+                  width={200}
+                  height={200}
+                />
+                <div className="founder-content">
+                  <h3 className="founder-name">Mr.Sahil Shaikh</h3>
+                  <p>
+                  Mr. Sahil Shaikh is a graduate with a B.E. in Mechanical Engineering and possesses a 
+                  strong technical background. In addition to his academic qualifications, he has earned certifications in
+                   Food & Beverage Management, HACCP Certification, and Culinary Arts Certificate Courses,
+                   showcasing his versatile skill set and commitment to excellence in both technical and food-related fields.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

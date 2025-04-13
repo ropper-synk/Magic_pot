@@ -383,7 +383,7 @@ body {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: inherit;
+  color: #000000;
   gap: 10px;
 }
 
@@ -405,13 +405,13 @@ body {
 }
 
 .link-icon {
-  @apply absolute text-xl;
+  @apply absolute text-xl text-black;
   left: 15px;
   margin-right: 10px;
 }
 
 .link-title {
-  @apply text-sm whitespace-nowrap;
+  @apply text-sm whitespace-nowrap text-black;
   transform: translateX(100%);
   transition: transform 0.2s ease-in;
   text-indent: 35px;
@@ -431,30 +431,55 @@ body {
 }
 
 ion-icon {
-  @apply block;
+  @apply block text-black;
+}
+
+.tech-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 0 1rem;
 }
 
 .tech-card {
-  @apply bg-white/10 backdrop-blur-md rounded-2xl p-8 max-w-md mx-auto mt-12 pointer-events-auto;
-  animation: float 6s ease-in-out infinite;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tech-card:hover {
-  animation: pulse 2s ease-in-out infinite;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.tech-icon {
+  font-size: 2.5rem;
+  color: #4f46e5;
+  margin-bottom: 1rem;
 }
 
 .tech-title {
-  @apply text-2xl font-bold text-white mb-4;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
 }
 
 .tech-description {
-  @apply text-white/80 leading-relaxed;
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.5;
 }
 
 .temperature-highlight {
-  @apply font-semibold text-orange-300;
+  color: #4f46e5;
+  font-weight: 600;
 }
 
 .cards-grid {
@@ -981,6 +1006,23 @@ ion-icon {
   text-align: center;
 }
 
+.about-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
 .about-title {
   font-size: 3.5rem;
   font-weight: 800;
@@ -1045,6 +1087,11 @@ ion-icon {
 
   .about-description p {
     font-size: 1rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+    margin: 1.5rem auto;
   }
 }
 
@@ -1323,7 +1370,16 @@ ion-icon {
 }
 
 .nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
   position: relative;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .nav-link::after {
@@ -1331,9 +1387,9 @@ ion-icon {
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: 0;
+  bottom: -4px;
   left: 0;
-  background-color: #0066ff;
+  background-color: white;
   transition: width 0.3s ease;
 }
 
@@ -1391,18 +1447,78 @@ ion-icon {
 }
 
 .card-media {
+  position: relative;
   width: 100%;
-  height: 200px;
-  border-radius: 12px;
+  height: 300px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  perspective: 1000px;
 }
 
-.media-image {
+.card-media img {
+  position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  object-fit: contain;
+  transition: transform 1.2s ease;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-media img:first-child {
+  animation: flipImage1 8s infinite;
+}
+
+.card-media img:last-child {
+  animation: flipImage2 8s infinite;
+}
+
+@keyframes flipImage1 {
+  0% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateY(180deg) scale(1);
+    opacity: 0;
+  }
+  75% {
+    transform: rotateY(180deg) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flipImage2 {
+  0% {
+    transform: rotateY(180deg) scale(1);
+    opacity: 0;
+  }
+  25% {
+    transform: rotateY(180deg) scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: rotateY(360deg) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: rotateY(360deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(540deg) scale(1);
+    opacity: 0;
+  }
 }
 
 .modern-card:hover .media-image {
@@ -1410,8 +1526,14 @@ ion-icon {
 }
 
 .card-description {
-  @apply text-white/80 leading-relaxed;
-  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
+  white-space: pre-line;
+  opacity: 0.9;
 }
 
 .card-actions {
@@ -1624,48 +1746,41 @@ ion-icon {
 
 .ceo-profile {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  max-width: 600px;
+  min-height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
   gap: 1.5rem;
-  margin-top: 1rem;
 }
 
-.ceo-profile-image {
-  width: 200px;
-  height: 200px;
+.founder-image {
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.2);
   object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
 }
 
-.ceo-profile:hover .ceo-profile-image {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+.founder-content {
+  text-align: left;
+  flex: 1;
 }
 
-.ceo-profile-content {
-  text-align: center;
-}
-
-.ceo-name {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.founder-name {
   color: white;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
-@media (min-width: 768px) {
-  .ceo-profile {
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-  }
-  
-  .ceo-profile-content {
-    text-align: left;
-  }
+.founder-content p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .about-card-section {
@@ -1729,4 +1844,118 @@ ion-icon {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.rte-badge-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.rte-badge:hover .rte-badge-image {
+  transform: scale(1.05);
+}
+
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.close-icon {
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.video-modal-player {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  border-radius: 12px;
+}
+
+.founders-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.founder-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 700px;
+  min-height: 180px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  gap: 2rem;
+}
+
+.founder-profile:hover {
+  transform: translateY(-5px);
+}
+
+.founder-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.founder-content {
+  text-align: left;
+  flex: 1;
+}
+
+.founder-name {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.founder-content p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }

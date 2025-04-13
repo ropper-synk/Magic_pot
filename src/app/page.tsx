@@ -64,14 +64,7 @@ export default function Home() {
               <span className="link-title">Company</span>
             </Link>
           </li>
-          <li className="link">
-            <Link href="/blog" className="link-content">
-              <span className="link-icon">
-                <IonIcon name="newspaper-outline" />
-              </span>
-              <span className="link-title">Blog</span>
-            </Link>
-          </li>
+         
           <li className="link">
             <Link href="/videos" className="link-content">
               <span className="link-icon">
@@ -109,12 +102,52 @@ export default function Home() {
           Say goodbye to complicated cooking and hello to effortless, energetic meals 
           that are as quick as they are delicious!
         </p>
-        <div className="tech-card">
-          <h2 className="tech-title">Self-Heating Technology</h2>
-          <p className="tech-description">
-            Magic Pack heats up to <span className="temperature-highlight">80°C</span> for 
-            perfect cooking, while staying safe under <span className="temperature-highlight">130°C</span>.
-          </p>
+        <div className="tech-cards-grid">
+          <div className="tech-card">
+            <div className="tech-icon">
+              <IonIcon name="thermometer-outline" />
+            </div>
+            <h2 className="tech-title">Self-Heating Technology</h2>
+            <p className="tech-description">
+              Magic Pack heats up to 
+              <span className="temperature-highlight">80°C</span> for perfect cooking, 
+              while staying safe under 
+              <span className="temperature-highlight">130°C</span>
+            </p>
+          </div>
+
+          <div className="tech-card">
+            <div className="tech-icon">
+              <IonIcon name="flash-outline" />
+            </div>
+            <h2 className="tech-title">Power Independent</h2>
+            <p className="tech-description">
+              <span className="temperature-highlight">No external power needed</span> – 
+              <span className="temperature-highlight">Doesn't rely on electricity or gas</span>
+            </p>
+          </div>
+
+          <div className="tech-card">
+            <div className="tech-icon">
+              <IonIcon name="shield-checkmark-outline" />
+            </div>
+            <h2 className="tech-title">User-friendly</h2>
+            <p className="tech-description">
+              <span className="temperature-highlight">Easy to operate</span> – 
+              <span className="temperature-highlight">even for beginners</span>
+            </p>
+          </div>
+
+          <div className="tech-card">
+            <div className="tech-icon">
+              <IonIcon name="time-outline" />
+            </div>
+            <h2 className="tech-title">Time-saving</h2>
+            <p className="tech-description">
+              <span className="temperature-highlight">Heats up quickly</span> – 
+              <span className="temperature-highlight">can cook food faster in some cases</span>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -123,24 +156,28 @@ export default function Home() {
           <h2 className="badge-section-title">Food Types</h2>
           <div className="badges-grid">
             <ReadyToEatBadge 
-              icon="restaurant-outline" 
-              text="Ready" 
-              subText="RTE"
-            />
-            <ReadyToEatBadge 
               icon="timer-outline" 
-              text="Quick" 
-              subText="QCK"
+              text="Egg" 
+              subText="Egg"
+              image="Egg.jpg"
             />
             <ReadyToEatBadge 
               icon="flame-outline" 
-              text="Heat" 
-              subText="HTG"
+              text="Noodle" 
+              subText="Noodle"
+              image="Noodle.jpg"
+            />
+            <ReadyToEatBadge 
+              icon="restaurant-outline" 
+              text="Biryani" 
+              subText="Biryani"
+              image="Biryani.jpg"
             />
             <ReadyToEatBadge 
               icon="shield-checkmark-outline" 
-              text="Safe" 
-              subText="SFE"
+              text="Poohe" 
+              subText="Poohe"
+              image="Poohe.jpg"
             />
           </div>
         </div>

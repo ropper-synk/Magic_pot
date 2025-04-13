@@ -28,27 +28,51 @@ export default function AboutUs() {
               <span className="link-title">Home</span>
             </Link>
           </li>
+          <li className="link">
+            <Link href="/about" className="link-content">
+              <span className="link-icon">
+                <IonIcon name="information-circle-outline" />
+              </span>
+              <span className="link-title">About Us</span>
+            </Link>
+          </li>
+          <li className="link">
+            <Link href="/products" className="link-content">
+              <span className="link-icon">
+                <IonIcon name="cube-outline" />
+              </span>
+              <span className="link-title">Products</span>
+            </Link>
+          </li>
+          <li className="link">
+            <Link href="/owner" className="link-content">
+              <span className="link-icon">
+                <IonIcon name="business-outline" />
+              </span>
+              <span className="link-title">iFTX</span>
+            </Link>
+          </li>
+          <li className="link">
+            <Link href="/videos" className="link-content">
+              <span className="link-icon">
+                <IonIcon name="videocam-outline" />
+              </span>
+              <span className="link-title">Videos</span>
+            </Link>
+          </li>
+          <li className="link">
+            <Link href="/payment" className="link-content">
+              <span className="link-icon">
+                <IonIcon name="cart-outline" />
+              </span>
+              <span className="link-title">Buy Now</span>
+            </Link>
+          </li>
         </ul>
       </div>
 
       <div className="about-content">
         <h1 className="about-title">About Maggic Pot</h1>
-        
-        <div className="about-card-section">
-          <ModernCard 
-            thumbnailSrc="/logo.png"
-            thumbnailAlt="Maggic Pot Logo"
-            header="Our Innovation"
-            subhead="Revolutionizing Food Technology"
-            mediaSrc="/product-hero.jpg"
-            mediaAlt="Maggic Pot Product"
-            description="Our self-heating technology allows you to enjoy hot, delicious meals anywhere without traditional cooking methods. Perfect for outdoor adventures, office lunches, or quick meals at home."
-            primaryButtonText="Learn More"
-            primaryButtonIcon="arrow-forward-outline"
-            secondaryButtonText="Save"
-            secondaryButtonIcon="bookmark-outline"
-          />
-        </div>
         
         <div className="about-description">
           <p>
